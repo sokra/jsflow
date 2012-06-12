@@ -1,0 +1,14 @@
+var $ = require("jquery");
+var jsflow = require("./lib/jsflow");
+$() ==> {
+	function compile() {
+		$("#input").val() ->
+			jsflow.compile(#) ->
+			$("#output").text(#)
+		~> # && #.stack || # ->
+			$("#output").text(#);
+	}
+	$("#input").on("change") ==> compile();
+	$("#input").on("keyup") ==> compile();
+	compile();
+}
