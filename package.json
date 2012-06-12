@@ -5,6 +5,7 @@
 	"author": "Tobias Koppers @sokra",
 	"main": "lib/jsflow.js",
 	"bin": "bin/jsflow.js",
+	"loader": "lib/loader.js",
 	"dependencies": {
 		"escodegen": "*"
 	},
