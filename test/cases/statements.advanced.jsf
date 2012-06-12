@@ -1,0 +1,6 @@
+sync() -> var a = # => a();
+async() --> var a = # => a();
+error_sync() ~> var a = # => a();
+error_async() --> # ~~> var a = # => a();
+ignore() -> console.log(#) => var a = # => a();
+custom() ==> (x, #, y, #err) var a = # => a();

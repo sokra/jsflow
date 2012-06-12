@@ -1,0 +1,38 @@
+var fs = require("fs");
+fs.readFile(__filename) -->
+	console.log(#)
+~~> console.error(#);
+
+fs.readFile(__filename) -->
+	console.log(#)
+~~> {
+	console.error(#);
+	throw #;
+}
+
+fs.readFileSync(__filename) ->
+	console.log(#)
+~> console.error(#);
+
+fs.readFileSync(__filename) ->
+	fs.readFile(__filename) -->
+	console.log(#)
+~~> ~> console.error(#);
+
+fs.readFile(__filename) --> {
+	fs.readFile(__filename) -->
+		console.log(#)
+	~~> console.error("inner " + #);
+} ~~> console.error("outer " + #);
+
+createErrorHandler -> #() +~> fs.readFileSync(__filename) -> console.log(#);
+createErrorHandler() ==> (#) # +~~> fs.readFile(__filename) --> console.log(#);
+(function(err) { console.error(err) }) +~~>
+	createErrorHandler() ==> (#)
+	# +~~>
+	fs.readFile(__filename) -->
+	console.log(#)
+~> var err = # =>
+	# && (#.stack || #.message) || "error" ->
+	console.error(#) =>
+	throw err;

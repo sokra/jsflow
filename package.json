@@ -1,0 +1,15 @@
+{
+	"name": "jsflow",
+	"version": "0.1.0",
+	"description": "Just another approach to reduce spaghetti code. But not a libary.",
+	"author": "Tobias Koppers @sokra",
+	"main": "lib/jsflow.js",
+	"bin": "bin/jsflow.js",
+	"dependencies": {
+		"escodegen": "*"
+	},
+	"devDependencies": {
+		"mocha": "*",
+		"should": "*"
+	}
+}

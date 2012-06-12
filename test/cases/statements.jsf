@@ -1,0 +1,13 @@
+2 ->
+	var val = # =>
+	if(!#) {
+		# = 1;
+	} =>
+	function doSth() {
+		console.log();
+	} =>
+	while(#) {
+		#--;
+	} =>
+	read(#) -->
+	console.log(#);

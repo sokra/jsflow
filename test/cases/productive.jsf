@@ -1,0 +1,53 @@
+function multi() {
+	var count = 0;
+	var done = false;
+	var listeners = [];
+	function finished(err) {
+		if(done) return;
+		done = true;
+		listeners.forEach() ==> (#)
+		#(err);
+	}
+	return {
+		start: function() {
+			count++;
+			return finished;
+		},
+		end: function() {
+			count--;
+			if(count == 0) finished();
+		},
+		continueArray: function(arr) {
+			count += arr.length - 1;
+			if(count == 0) finished();
+		},
+		done: function(cb) {
+			listeners.push(cb);
+		}
+	}
+}
+
+var fs = require("fs");
+var path = require('path');
+
+var files = {};
+
+var m = multi();
+m.start() +~~>
+	fs.readdir(__dirname) -->
+	m.continueArray(#) =>
+	#.forEach() ==> (#)
+	var p = # =>
+	path.join(__dirname, #) ->
+	fs.readFile(#, "utf-8") -->
+	files[p] = # =>
+	m.end();
+
+m.done() -->
+	files ->
+	Object.keys(#) ->
+	console.dir(#)
+~~> console.error(#);
+
+
+

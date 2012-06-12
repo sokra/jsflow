@@ -1,0 +1,13 @@
+var fs = require("fs");
+
+fs.readdir(__dirname) -->
+	#.forEach() ==> (#)
+	var path = # =>
+	fs.readFile(#, "utf-8") ==> (#err, #)
+	console.log(path + ": " + #);
+
+test() ==> (a, b, c) {
+	console.log(a + b + c);
+}
+
+	
