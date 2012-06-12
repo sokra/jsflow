@@ -11,4 +11,7 @@ $() ==> {
 	$("#input").on("change") ==> compile();
 	$("#input").on("keyup") ==> compile();
 	compile();
+	require("./package.json").version ->
+		$("#headline").text() + " version " + # ->
+		$("#headline").text(#);
 }
