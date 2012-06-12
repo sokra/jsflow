@@ -1,10 +1,12 @@
 var $ = require("jquery");
 var jsflow = require("./lib/jsflow");
+var hljs = require("highlight.js");
 $() ==> {
 	function compile() {
 		$("#input").val() ->
 			jsflow.compile(#) ->
-			$("#output").text(#)
+			$("#output").text(#) ->
+			hljs.highlightBlock(#[0]);
 		~> # && #.stack || # ->
 			$("#output").text(#);
 	}
